@@ -18,23 +18,65 @@ Cline is a highly skilled AI software engineer with extensive knowledge in progr
 
 In this lab, you will:
 - Install the required VS Code extension for Cline
-- Configure Cline with your own LLM (Large Language Model)
+- Install the VS Code Extension for GitHub Copilot
+- Configure Cline with GitHub Copilot 
 - Test the installation and basic functionality
 
 ---
 
-### Prerequisites
+### Requirements
 
-This lab assumes you have:
+This lab will show you how to following requirements for this workshop:
 * Visual Studio Code installed on your machine (download: https://code.visualstudio.com/download)
-* An account with an LLM provider (e.g., OpenAI, Anthropic) for API keys
-* Basic familiarity with VS Code interfaces (helpful but not required)
-
-> **Note:** You will also need **Node.js** for later labs. If you haven't installed it yet, see: https://nodejs.org/en/download
+* Create/Login Github 
+* Install Visual Studio Cline Extensions - Cline and Github Copilot
+* Configure Cline Github Copilot Free Credits Connection
+* Install Visual Studio SQL Developer Extension
+* [Windows Only] Install Git/GitBash 
+* Install NodeJS
+* Test the Installation
 
 ---
+## Task 1: Install Visual Studio Code installed on your machine 
 
-## Task 1: Install VS Code Extension
+1. You can download Visual Studio Code from this link (download: https://code.visualstudio.com/download) 
+
+Note:  if you need further assistance regarding your VS Code setup based on your operating system you can follow instructions below, if not you can skip this step.
+
+### Install VS Code on macOS
+
+* Download Visual Studio Code for macOS. 
+
+* Open the downloaded .dmg file
+
+* Drag Visual Studio Code.app to the Applications folder
+
+* Open VS Code from the Applications folder, by double clicking the icon.
+
+* Add VS Code to your Dock by right-clicking on the icon, located in the Dock, to bring up the context menu and choosing Options, Keep in Dock.
+
+Visual Studio Code on macOS - (https://code.visualstudio.com/docs/setup/mac)
+
+### Install VS Code on Windows
+
+* Use the Windows installer and run the installer (VSCodeUserSetup-{version}.exe) or use the Zip File run VS Code from there
+
+Visual Studio Code on Windows - (https://code.visualstudio.com/docs/setup/windows)
+
+
+### Install VS Code on Linux
+
+* Download and install Visual Studio Code for your Linux distribution (https://code.visualstudio.com/docs/setup/linux)
+
+
+
+## Task 2: Create/Login Github 
+
+1. To sign up for an account, navigate to https://github.com/ and follow the prompts.
+
+Note: For Getting started with your GitHub account you follow instructions here. (https://docs.github.com/en/get-started/onboarding/getting-started-with-your-github-account)
+
+## Task 3: Install VS Code Extension: Cline
 
 1. Open Visual Studio Code.
 
@@ -44,9 +86,25 @@ This lab assumes you have:
 
 4. Click Install on the chosen extension.
 
-![Install Extension](./images/cline-extension.png)  <!-- Placeholder; replace with actual image if available -->
+![Install Extension](./images/ClineExt.png)  <!-- Placeholder; replace with actual image if available -->
 
-## Task 2: Configure Cline
+## Task 4: Install VS Code Extension: Github Copilot
+
+1. Navigate to your operating system 
+
+2. Open Visual Studio Code.
+
+2. Go to the Extensions view by clicking the Extensions icon in the Activity Bar on the side or pressing `Ctrl+Shift+X` (Windows/Linux) or `Cmd+Shift+X` (macOS).
+
+3. Search for 'GitHub Copilot' in the searchbox.
+
+4. Click Install on the chosen extension.
+
+![Install Extension](./images/GithubCopilotExt.png)  <!-- Placeholder; replace with actual image if available -->
+
+
+
+## Task 4: Configure Cline Github Copilot Free Credits Connection
 
 1. Open the Cline view:
    - Click the **Cline** icon in the VS Code Activity Bar (left side), or
@@ -64,19 +122,53 @@ This lab assumes you have:
 
 **Note** If cline is not appearing, try restarting the VS Code environment after install.
 
-**Note: Configure Your Own LLM**  
-To use Cline effectively, you'll need to set up your preferred Large Language Model (LLM) by providing API keys. This allows customization and avoids reliance on default or shared models.  
-- **Choose an LLM Provider:** Popular options include OpenAI (e.g., GPT models), Anthropic (Claude), Google (Gemini), or open-source via Hugging Face. Select based on your needs for cost, performance, and features.  
-- **Obtain API Keys:** Sign up for an account with your chosen provider (e.g., at platform.openai.com for OpenAI). Generate an API key from their dashboard – keep it secure and never share it.  
-- **Configure in VS Code:** In the extension settings, find the LLM configuration section. Input your API key, select the model (e.g., "gpt-4o" or "claude-3.5-sonnet"), and test the connection. If using a proxy or custom endpoint, configure those as well.  
-- **Note:** You can enable the ChatGPT model directly in the browser if prompted, preventing you from needing keys.
-![ChatGPT Login](./images/chatGptlogin.png)
-![ChatGPT Success](./images/chatgptsuccess.png)
-- **Helpful Tips:** Start with free tiers if available to test; monitor usage to avoid unexpected costs; refer to the provider's documentation for model-specific setup. If issues arise, check the extension's logs or community forums for troubleshooting. For advanced setups, consider editing the extension's config.json file directly.
-
 3. Save the settings and restart VS Code if prompted.
 
-## Task 3: Test the Installation
+## Task 4: Configure Cline for GitHub Copilot
+
+1. Go to the Extensions icon of Cline, and select Settings icon.
+
+2. Select Api Provider as GiHub Copilot
+
+![Continue configuration](./images/GithubCopilotSelect.png)
+
+3. Select  copilot - copilot-fast model from Language Model drop down list.
+
+![Continue configuration](./images/ModelSelection.png)
+
+## Task 5: Install Visual Studio SQL Developer Extension
+
+
+1. Go to the Extensions view by clicking the Extensions icon in the Activity Bar on the side or pressing `Ctrl+Shift+X` (Windows/Linux) or `Cmd+Shift+X` (macOS).
+
+2. Search for 'SQL Developer' in the searchbox.
+
+3. Click Install on the chosen extension.
+
+![Continue configuration](./images/SQLDeveloperExt.png)
+
+## Task 6: [Windows Only] Install Git/GitBash 
+
+1. Click Git icon and click download Git for Windows
+
+![Continue configuration](./images/GitBashInstall.png)
+
+2. Once you clicked download Git for Windows button, you can see a pop-up window to open the external website where you have redirected to Git Download and Install page.
+
+![Continue configuration](./images/OpenGitWeb.png)
+
+### Task 6:  NodeJS Installation
+
+1. Go to the Extensions view by clicking the Extensions icon in the Activity Bar on the side.
+
+2. Search for 'NodeJS' in the searchbox.
+
+3. Click Install on the chosen extension.
+
+![Continue configuration](./images/NodeJS.png)
+
+
+## Task 7: Test the Installation
 
 1. Open a code file in VS Code.
 
@@ -85,20 +177,27 @@ To use Cline effectively, you'll need to set up your preferred Large Language Mo
 3. Create a small test file (for example `hello.js`) and paste this code:
 
    ```js
-   function add(a, b) {
-     return a + b;
-   }
-   module.exports = { add };
+      function add(a, b) {
+      return a + b;
+      }
+      module.exports = { add };
    ```
+![Continue configuration](./images/AddFile.png)
 
 4. In VS Code, highlight the code and either:
    - Right-click and choose **Add to Cline**, or
    - Copy/paste it into the Cline chat panel.
 
+![Continue configuration](./images/AddToCline.png)
+
 5. Ask Cline:
    - "Explain what this code does and suggest one improvement."
 
+![Continue configuration](./images/RunTestCode.png)
+
 6. Verify that Cline responds correctly using your configured LLM.
+
+![Continue configuration](./images/TestCodeReview.png)
 
 ---
 
