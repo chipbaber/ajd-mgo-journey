@@ -159,11 +159,10 @@ Note: For Getting started with your GitHub account you follow instructions here.
 
 ### Task 6:  NodeJS Installation
 
+### Install NodeJS on macOS/Linux
 1. Go to Visual Studio Code and click Terminal and run following commands based on your operating system or you can download directly from NodeJS Official Website from this link (download: https://nodejs.org/en/download)
 
 ![Continue configuration](./images/Terminal.png)
-
-### Install NodeJS on macOS/Linux
 
 * Download and install nvm:
 ```curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash```
@@ -178,8 +177,20 @@ Note: For Getting started with your GitHub account you follow instructions here.
 
 ### Install NodeJS on Windows
 
-* Download Windows Installer (.msi) from NodeJS Official Website from this link (download: https://nodejs.org/en/download) and install it.
+1. Download Windows Installer (.msi) from NodeJS Official Website from this link (download: https://nodejs.org/en/download) and install it.
 
+### Confirm Your Installation
+
+1. Open VS Code Terminal and Check Node Version to check it is properly installed.
+
+```bash
+<copy>
+node -v
+</copy>
+```
+* You should see the version number appear if you completed the install correctly.
+
+![node version](./images/nodeversion.png)
 
 ## Task 7: Test the Installation
 
