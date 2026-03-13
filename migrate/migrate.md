@@ -6,13 +6,14 @@ In this lab, you'll build a simple CLI tool to migrate data from your **source A
 
 > **Estimated Time:** 30 minutes
 
-**Note:** If using Cline, it can help refine the CLI code or debug migration issues.
+**Note:** AI-generated output is non-deterministic. The instructions below first provide prompts for you to run in Cline and review the results. If you are not happy with the generated output, use the manual `[Optional]` steps in each task to complete the lab with the tested workflow.
 
 ---
 
 ### Objectives
 
 In this lab, you will:
+- Learn and experiment with using Cline to build the migration workflow
 - Use a source AJD and a separate target AJD to simulate a real migration
 - Build a CLI tool to transfer collections and data
 - Run the migration and monitor progress
@@ -32,7 +33,15 @@ This lab assumes you have:
 
 ## Task 1: Provision Target AJD Instance
 
-1. Follow Tasks 1-3 in Lab 2: Provision and Connect to AJD to provision a new AJD instance for the target (e.g., name it "TargetAJD"). Create a separate user (recommended: **MONGO_USER_TARGET**) and enable the MongoDB API.
+1. Ask Cline to summarize the target AJD provisioning steps you need to repeat from Lab 2 for the migration target environment.
+
+```bash
+add prompt: Ask Cline to summarize which Lab 2 steps must be repeated to provision a separate target AJD instance and MongoDB-enabled target user.
+```
+
+*add image: Cline response outlining the target AJD provisioning steps to repeat from Lab 2.*
+
+2. Follow Tasks 1-3 in Lab 2 to provision a new AJD instance for the target environment and create a separate MongoDB-enabled user, for example `MONGO_USER_TARGET`.
 
    **Note:** This keeps source and target separate to demonstrate the migration architecture clearly. Use your existing MongoDB or the Source-AJD from Lab 2 as the source.
 TargetAJD Autonomouse AI Database after following instruction in Lab 2 Task 1.
@@ -40,12 +49,19 @@ TargetAJD Autonomouse AI Database after following instruction in Lab 2 Task 1.
 MONGO_USER_TARGET user after following instruction in Lab 2 Task 2.
    ![Migration CLI](./images/mongousertarget.png)
 
-
-2. Ensure you have the source connection string ready (from Lab 2 as `$SOURCE_MONGO_API_URL`) and provision a new one for the target as `$TARGET_MONGO_API_URL`. Follow Lab 2 Task 4 instruction to copy source and target MongoDB API URLs.
+3. Ensure you have the source connection string ready (from Lab 2 as `$SOURCE_MONGO_API_URL`) and provision a new one for the target as `$TARGET_MONGO_API_URL`. Follow Lab 2 Task 4 to copy the source and target MongoDB API URLs.
 
    ![Migration CLI](./images/mongoAPI.png)
 
-3. Export both environment variables and verify they are set:
+4. Ask Cline to help you confirm the export commands for both environment variables.
+
+```bash
+add prompt: Ask Cline to provide the shell commands for exporting `SOURCE_MONGO_API_URL` and `TARGET_MONGO_API_URL` and explain how to verify they are set.
+```
+
+*add image: Cline response showing the export commands for the source and target MongoDB API URLs.*
+
+[Optional] Export both environment variables and verify they are set:
 
    ```bash
    <copy>
@@ -57,12 +73,14 @@ MONGO_USER_TARGET user after following instruction in Lab 2 Task 2.
    </copy>
    ```
 
+*add image: Terminal showing both environment variables echoed successfully after export.*
+
 **Note:** You can terminate both AJD instances after completing the LiveLab to avoid ongoing costs.
 
 ---
 
 ## Task 2: Build the Migration CLI
-1. From VS Code, open Cline Extension again.
+1. From VS Code, open the Cline extension again.
 
  ![Migration CLI](./images/Cline.png)
 
@@ -82,6 +100,8 @@ Ensure the code is compatible with Node.js v24
 </copy>
 ```
 
+*add image: Cline panel with the migration prompt pasted in and ready to execute.*
+
 3. Paste it in Cline Prompt and Click Execute Button highlighted below.
 
 ![Migration CLI](./images/ClinePrompt.png)
@@ -97,6 +117,8 @@ Ensure the code is compatible with Node.js v24
 6. You can confirm your Task has been completed and migrate.js has been created.
 
 ![Migration CLI](./images/Confirm.png)
+
+[Optional] If you are not happy with the generated output from Cline, manually create the project and use the tested code below.
 
 <!-- 1. In a new directory (e.g., `migration-cli`), initialize the project:
    ```bash
@@ -191,7 +213,15 @@ Ensure the code is compatible with Node.js v24
 When running the migration CLI, users reusing the AJD instance from 
 *Create a MongoDB-Compatible App with Autonomous JSON Database* or *MongoDB Migration – Lift & Shift to Oracle AI Database* Livelabs should ensure the source collection name matches the collection they intend to migrate. If not, the CLI may show a “successful migration” but migrate zero documents. The target collection can be any name since AJD will create it automatically.
 
-1. Execute the CLI with separate source and target URIs:
+1. Ask Cline to provide the final command for running the migration CLI with your source and target environment variables.
+
+```bash
+add prompt: Ask Cline to generate the final `node migrate.js` command using `SOURCE_MONGO_API_URL`, `TARGET_MONGO_API_URL`, `todos_source`, and `todos_target`.
+```
+
+*add image: Cline response with the final migration command ready to run.*
+
+2. Execute the CLI with separate source and target URIs:
    ```bash
    <copy>
    node migrate.js --src "$SOURCE_MONGO_API_URL" --tgt "$TARGET_MONGO_API_URL" --source-collection todos_source --target-collection todos_target
@@ -200,9 +230,13 @@ When running the migration CLI, users reusing the AJD instance from
 
    **Note:** If using the same instance for simplicity, set both --src and --tgt to the same URI, but prefer separate instances for a clear demonstration.
 
-2. Monitor the progress bar and output.
+3. Monitor the progress bar and output.
 
 ![Migration CLI](./images/mongo-cli-migrate.png)
+
+*add image: Terminal showing the migration command running successfully, ideally with the progress bar completed.*
+
+[Optional] Run the command above manually and confirm the progress bar completes without errors.
 
 ---
 <!--
