@@ -1,4 +1,4 @@
-# Lab 4: Mongo Vibe Assist Migration Lab
+# Lab 5: Mongo Vibe Assist Migration Lab
 
 ## Introduction
 
@@ -54,8 +54,6 @@ MONGO_USER_TARGET user after following instruction in Lab 2 Task 2.
 
 3. Add the original `MONGO_API_URL` as `SOURCE_MONGO_API_URL` and the new connection string as `TARGET_MONGO_API_URL` to the `.env` file created in Lab 3.
 
----
-
 ## Task 2: Sprint 0 — Grounding the AI Session
 
 **Goal:** Provide context so the AI understands the architecture, persona, and the Product Definition Document for the migration tool.
@@ -93,13 +91,11 @@ Please acknowledge the tech stack, narrative goals, and confirm readiness for Sp
 
 *This screenshot shows the AI summarizing the technical stack, acknowledging the focus on demonstration-friendly logging, and preparing for Sprint 1.*
 
-![Sprint 0 Planning Screenshot](./images/lab4-task1-plan.png)
+![Sprint 0 Planning Screenshot](./images/lab5-task1-plan.png)
 
 ### 3. Acting & Validating
 
 Verify the AI clearly understands the requirement to build this in Node.js using the official `mongodb` npm package.
-
----
 
 ## Task 3: Sprint 1 — Connectivity & Discovery
 
@@ -125,7 +121,7 @@ Finally, write simple passing unit tests for the connectivity module.
 
 ### 2. Reviewing the plan: Checking the AI's proposed implementation
 
-![Sprint 1 Planning Screenshot](./images/lab4-task2-plan.png)
+![Sprint 1 Planning Screenshot](./images/lab5-task2-plan.png)
 
 The AI will propose creating the package.json, connection handler, and discovery module.
 
@@ -139,11 +135,9 @@ Toggle to **Act Mode** and execute the plan. You will be prompted to approve ter
 
 ### 4. Validating and adjusting: Testing the output and making necessary corrections
 
-![Sprint 1 Result Screenshot](./images/lab4-task2-act.png)
+![Sprint 1 Result Screenshot](./images/lab5-task2-act.png)
 
 Ensure the output is clean. You can manually run the `discover.js` script (or `node main.js` depending on the AI's scaffolding) to verify it successfully pings your MongoDB and lists the collections.
-
----
 
 ## Task 4: Sprint 2 — Core Data Migration
 
@@ -167,7 +161,7 @@ Write a unit test for this step mocking the mongodb clients to test the batch re
 
 ### 2. Reviewing the plan: Checking the AI's proposed implementation
 
-![Sprint 2 Planning Screenshot](./images/lab4-task3-plan.png)
+![Sprint 2 Planning Screenshot](./images/lab5-task3-plan.png)
 
 ### 3. Acting on the plan: Allowing the AI to write the code
 
@@ -175,9 +169,7 @@ Review the newly created data structures, and click to approve writing `migrate.
 
 ### 4. Validating and adjusting: Testing the output and making necessary corrections
 
-![Sprint 2 Result Screenshot](./images/lab4-task3-act.png)
-
----
+![Sprint 2 Result Screenshot](./images/lab5-task3-act.png)
 
 ## Task 5: Sprint 3 — Full Migration & Indexing
 
@@ -199,7 +191,7 @@ Refine all the console logging during this loop so it is heavily explanatory for
 
 ### 2. Reviewing the plan: Checking the AI's proposed implementation
 
-![Sprint 3 Planning Screenshot](./images/lab4-task4-plan.png)
+![Sprint 3 Planning Screenshot](./images/lab5-task4-plan.png)
 
 Verify that the index replication uses the standard MongoDB index APIs which are supported natively by Oracle AJD.
 
@@ -209,9 +201,7 @@ Toggle to Act mode and let the AI finish the core looping functionality.
 
 ### 4. Validating and adjusting: Testing the output and making necessary corrections
 
-![Sprint 3 Result Screenshot](./images/lab4-task4-act.png)
-
----
+![Sprint 3 Result Screenshot](./images/lab5-task4-act.png)
 
 ## Task 6: Sprint 4 — Validation & Demo Prep
 
@@ -235,7 +225,7 @@ Finally, write the `README.md` outlining the "Demo Show Script" format from my o
 
 ### 2. Reviewing the plan: Checking the AI's proposed implementation
 
-![Sprint 4 Planning Screenshot](./images/lab4-task5-plan.png)
+![Sprint 4 Planning Screenshot](./images/lab5-task5-plan.png)
 
 ### 3. Acting on the plan: Allowing the AI to write the code
 
@@ -243,7 +233,7 @@ Let the AI create the validation scripts and the final README.md.
 
 ### 4. Validating and adjusting: Testing the output and making necessary corrections
 
-![Sprint 4 Result Screenshot](./images/lab4-task5-act.png)
+![Sprint 4 Result Screenshot](./images/lab5-task5-act.png)
 
 You can now fully execute your tool:
 
