@@ -219,7 +219,6 @@ Implement the `validate.js` module. It should run `countDocuments` on both the s
 
 Add the Demo Configuration Helper step at the very end of the script to output: "SUCCESS! Switch your application to this Target Connection String: <TARGET_MONGO_API_URL>".
 
-Finally, write the `README.md` outlining the "Demo Show Script" format from my original plan (Act 1 through Act 5) so the presenter knows exactly how to demo this tool.
 </copy>
 ```
 
