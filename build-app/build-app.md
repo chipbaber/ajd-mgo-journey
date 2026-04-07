@@ -2,11 +2,10 @@
 
 ## Introduction
 
-![To-Do App UI Screenshot Above Fold](./images/todo-list.png)
-*This screenshot shows the final To-Do application layout that you will build by the end of the sprints. Use it as a visual success target.*
+| ![To-Do App UI Screenshot Above Fold](./images/todo-list.png) | ![To-Do App UI Screenshot CRUD Actions](./images/todocrud.png) |
+|---|---|
+| *This screenshot shows the final To-Do application layout that you will build by the end of the sprints. Use it as a visual success target.* | *This screenshot highlights completing and deleting todos, demonstrating the full CRUD workflow that you will implement.* |
 
-![To-Do App UI Screenshot CRUD Actions](./images/todocrud.png)
-*This screenshot highlights completing and deleting todos, demonstrating the full CRUD workflow that you will implement.*
 
 Modern developers are increasingly using AI agents to accelerate application development. Instead of writing every file manually, developers can now guide intelligent tooling to scaffold projects, generate working code, and iterate quickly. This emerging workflow is often referred to as **vibe coding** — a collaborative development approach where the developer focuses on intent, architecture, and validation while the AI assists with implementation.
 
