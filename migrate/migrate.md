@@ -40,15 +40,7 @@ This lab assumes you have:
 
 ## Task 1: Provision Target AJD Instance
 
-1. Ask the AI assistant to summarize the target AJD provisioning steps you need to repeat from Lab 2 for the migration target environment.
-
-```bash
-add prompt: Ask Cline to summarize which Lab 2 steps must be repeated to provision a separate target AJD instance and MongoDB-enabled target user.
-```
-
-*add image: Cline response outlining the target AJD provisioning steps to repeat from Lab 2.*
-
-2. Follow Tasks 1-3 in Lab 2 to provision a new AJD instance for the target environment and create a separate MongoDB-enabled user, for example `MONGO_USER_TARGET`.
+1. Follow Tasks 1-3 in Lab 2 to provision a new AJD instance for the target environment and create a separate MongoDB-enabled user, for example `MONGO_USER_TARGET`.
 
    **Note:** This keeps source and target separate to demonstrate the migration architecture clearly. Use your existing MongoDB or the Source-AJD from Lab 2 as the source.
 TargetAJD Autonomouse AI Database after following instruction in Lab 2 Task 1.
@@ -56,11 +48,11 @@ TargetAJD Autonomouse AI Database after following instruction in Lab 2 Task 1.
 MONGO_USER_TARGET user after following instruction in Lab 2 Task 2.
    ![Migration CLI](./images/mongousertarget.png)
 
-3. Ensure you have the source connection string ready (from Lab 2 as `$SOURCE_MONGO_API_URL`) and provision a new one for the target as `$TARGET_MONGO_API_URL`. Follow Lab 2 Task 4 to copy the source and target MongoDB API URLs.
+2. Ensure you have the source connection string ready (from Lab 2 as `$SOURCE_MONGO_API_URL`) and provision a new one for the target as `$TARGET_MONGO_API_URL`. Follow Lab 2 Task 4 to copy the source and target MongoDB API URLs.
 
    ![Migration CLI](./images/mongoAPI.png)
 
-4. Add the original `MONGO_API_URL` as `SOURCE_MONGO_API_URL` and the new connection string as `TARGET_MONGO_API_URL` to the `.env` file created in Lab 3.
+3. Add the original `MONGO_API_URL` as `SOURCE_MONGO_API_URL` and the new connection string as `TARGET_MONGO_API_URL` to the `.env` file created in Lab 3.
 
 ---
 
@@ -75,6 +67,7 @@ MONGO_USER_TARGET user after following instruction in Lab 2 Task 2.
 Provide this grounding prompt to set the context of the new project:
 
 ```text
+<copy>
 Hi Cline, we are starting a new lab. Use the `migration-cli` folder as the workspace.
 
 We are building a Node.js CLI application called `MongoVibeAssist_Migrator`. The backend connects to an Oracle Autonomous JSON Database via the Mongo API.
@@ -93,6 +86,7 @@ Here is the Sprint plan we will follow:
 - Sprint 4: Validation & Demo Prep (validate.js counts comparison table, outputting final connection string, complete README.md).
 
 Please acknowledge the tech stack, narrative goals, and confirm readiness for Sprint 1.
+</copy>
 ```
 
 ### 2. Reviewing the plan: Checking the AI's proposed implementation
@@ -118,6 +112,7 @@ Verify the AI clearly understands the requirement to build this in Node.js using
 Provide this prompt to start development:
 
 ```text
+<copy>
 Let's kick off Sprint 1! 
 
 Please run `npm init -y`, install `mongodb`, `dotenv`, and `commander`. Set up our CLI skeleton. 
@@ -125,6 +120,7 @@ Please run `npm init -y`, install `mongodb`, `dotenv`, and `commander`. Set up o
 Build a `connect.js` module to securely load `SOURCE_MONGO_API_URL` and `TARGET_MONGO_API_URL` from our root `../.env` file. Then, create a `discover.js` module that connects to the source MongoDB, lists all collections, calculates their document counts, and fetches their index definitions. 
 
 Finally, write simple passing unit tests for the connectivity module.
+</copy>
 ```
 
 ### 2. Reviewing the plan: Checking the AI's proposed implementation
@@ -158,6 +154,7 @@ Ensure the output is clean. You can manually run the `discover.js` script (or `n
 *How to construct this prompt:* Challenge the AI to build the core batch data transfer script for just a single collection first, enforcing explanatory logging.
 
 ```text
+<copy>
 Great! Moving to Sprint 2.
 
 Implement `migrate.js`. Add CLI arguments via commander allowing me to specify a single collection to migrate as a test. 
@@ -165,6 +162,7 @@ Implement `migrate.js`. Add CLI arguments via commander allowing me to specify a
 Implement efficient batch-reading from the MongoDB source, and batch-writing using `insertMany` into the Oracle AJD target. Be sure to add clear, verbose demo-style logging (e.g., "Wrote batch 1/10...", "-> Why: Batching ensures memory efficiency"). 
 
 Write a unit test for this step mocking the mongodb clients to test the batch read/write logic.
+</copy>
 ```
 
 ### 2. Reviewing the plan: Checking the AI's proposed implementation
@@ -190,11 +188,13 @@ Review the newly created data structures, and click to approve writing `migrate.
 *How to construct this prompt:* Ask the AI to expand the script into a loop across all collections and implement schema index replication.
 
 ```text
+<copy>
 We are on Sprint 3! 
 
 Modify `migrate.js` to loop through all collections returned by our `discover.js` plan. After data is migrated, implement the index replication module: read the index definitions from discovery and duplicate them into AJD using standard index creation commands.
 
 Refine all the console logging during this loop so it is heavily explanatory for a live audience. Make sure to add robust error handling in case a batch fails to insert, logging the issue gracefully.
+</copy>
 ```
 
 ### 2. Reviewing the plan: Checking the AI's proposed implementation
@@ -222,6 +222,7 @@ Toggle to Act mode and let the AI finish the core looping functionality.
 *How to construct this prompt:* Instruct the AI to finish the tool by building validation logic and configuring the final demo presentation script.
 
 ```text
+<copy>
 Final stretch, Sprint 4!
 
 Implement the `validate.js` module. It should run `countDocuments` on both the source DB and the target DB, and then print a beautiful comparison summary table confirming 100% data transfer. 
@@ -229,6 +230,7 @@ Implement the `validate.js` module. It should run `countDocuments` on both the s
 Add the Demo Configuration Helper step at the very end of the script to output: "SUCCESS! Switch your application to this Target Connection String: <TARGET_MONGO_API_URL>".
 
 Finally, write the `README.md` outlining the "Demo Show Script" format from my original plan (Act 1 through Act 5) so the presenter knows exactly how to demo this tool.
+</copy>
 ```
 
 ### 2. Reviewing the plan: Checking the AI's proposed implementation

@@ -64,6 +64,7 @@ This lab assumes you have:
 Provide this grounding prompt:
 
 ```text
+<copy>
 Hi Cline, we are starting a new lab.
 
 We are building a Node.js To-Do CRUD application.
@@ -80,6 +81,7 @@ We will build the application using vibe coding. The project must use standard N
 
 We will build this application in structured development sprints.
 Please acknowledge and confirm readiness for Sprint 1.
+</copy>
 ```
 
 ### 2. Reviewing the plan: Checking the AI's proposed implementation
@@ -87,7 +89,6 @@ Please acknowledge and confirm readiness for Sprint 1.
 ![Sprint 0 Planning Screenshot](./images/Task1-Plan.png)
 
 *This screenshot shows the AI summarizing the development approach and confirming understanding of the Mongo developer persona and AJD backend. AI has acknowledged the sprint structure and is ready to proceed.*
-
 
 ---
 
@@ -100,6 +101,7 @@ Please acknowledge and confirm readiness for Sprint 1.
 *How to construct this prompt:* Explicitly define the goal of the sprint. Break down the requirements into actionable, step-by-step instructions. Tell the AI exactly which dependencies to install, to initialize a local git repository with an appropriate `.gitignore` at the root, what file to create, and how to handle the database connection using environment variables.
 
 ```text
+<copy>
 Hey again, let's kick off Sprint 1! 
 
 Before starting, please check that a root `.env` file exists in the workspace and verify that `MONGO_API_URL` is populated there.
@@ -113,6 +115,7 @@ After that, create a server.js file and set up an Express server listening on po
 I also need you to set up the MongoDB connection using the official MongoClient. It should read the connection string from an environment variable called MONGO_API_URL (sourced from the root `.env` file). Please explicitly load environment variables in server.js (for example with `require('dotenv').config({ path: '../.env' })` when running from `todo-app`). Create an async connectDB function that connects and pings the admin database, and make sure you call this during the server startup. 
 
 Finally, expose the database as a global db variable so we can easily use it in our routes later. This will set us up perfectly for Sprint 2!
+</copy>
 ```
 
 ### 2. Reviewing the plan: Checking the AI's proposed implementation
@@ -184,6 +187,7 @@ If you see an error like `TypeError: Cannot read properties of undefined (readin
 *How to construct this prompt:* Describe the specific API routes required for Create and Read operations. Then, provide structural instructions for the frontend UI, detailing the specific HTML elements needed (heading, input field, button, list) and requesting the corresponding frontend JavaScript to link the UI and API.
 
 ```text
+<copy>
 We're ready for Sprint 2! Now we need to handle Create and Read operations.
 
 Please add a GET /api/todos route that returns the documents from the 'todos' collection. Then, add a POST /api/todos route that accepts a text field and inserts it with a default 'completed: false' status.
@@ -191,6 +195,7 @@ Please add a GET /api/todos route that returns the documents from the 'todos' co
 Next, let's give this an interface. Please set up express.static to serve files from a public folder, and build a simple index.html file inside it. 
 
 The UI should just have a heading, a text input field, an add button, and an unordered list to display the to-dos. Finally, include vanilla JavaScript in the frontend to automatically fetch the existing to-dos on load and render them as list items!
+</copy>
 ```
 
 ### 2. Reviewing the plan: Checking the AI's proposed implementation
@@ -247,6 +252,7 @@ Review the generated file structure and approve the AI to write the code.
 *How to construct this prompt:* Specify the remaining CRUD operations (Update and Delete). Instruct the AI to use MongoDB's `ObjectId` for accurate document identification. Finally, ask the AI to map these new backend routes to the UI by adding interactive buttons for completing and deleting tasks.
 
 ```text
+<copy>
 That looks great! Let's move on to Sprint 3 and finish the CRUD operations.
 
 First, make sure to import ObjectId from the mongodb package in the backend. 
@@ -254,6 +260,7 @@ First, make sure to import ObjectId from the mongodb package in the backend.
 Then, add a DELETE /api/todos/:id route to remove documents by their _id, and a PUT /api/todos/:id route to update an item's status to completed: true.
 
 Back on the frontend, could you update the UI to include a "Complete" and "Delete" button next to each to-do item? Please wire these buttons up so they correctly call our new PUT and DELETE endpoints.
+</copy>
 ```
 
 ### 2. Reviewing the plan: Checking the AI's proposed implementation
@@ -305,6 +312,7 @@ Approve the approach to complete the CRUD implementations.
 *How to construct this prompt:* Ask the AI to output exactly how to start the application and what steps are required to verify that the entire workflow functions correctly end-to-end.
 
 ```text
+<copy>
 Awesome! For Sprint 4, we're ready to run and validate the app.
 
 Please run the server and test the application in the browser at `http://localhost:3000`.
@@ -315,6 +323,7 @@ Then share:
 1. The exact command used to run the server
 2. A short Browser Use test summary with pass/fail for each CRUD action
 3. Any issues found and the fixes applied (if needed)
+</copy>
 ```
 
 ### 2. Reviewing the plan: Checking the AI's proposed implementation
