@@ -90,8 +90,6 @@ Please acknowledge and confirm readiness for Sprint 1.
 
 *This screenshot shows the AI summarizing the development approach and confirming understanding of the Mongo developer persona and AJD backend. AI has acknowledged the sprint structure and is ready to proceed.*
 
----
-
 ## Task 2: Sprint 1 — Project Setup and AJD Connection
 
 **Goal:** Initialize the project scaffolding, set up the Express server, and establish a connection to the Oracle AJD database.
@@ -176,8 +174,6 @@ If this plan looks good, please toggle to **Act Mode (⌘⇧A)** and allow the A
 
 If you see an error like `TypeError: Cannot read properties of undefined (reading 'startsWith')`, `MONGO_API_URL` was not loaded. Fix by loading `.env` explicitly before reading `process.env.MONGO_API_URL`.
 
----
-
 ## Task 3: Sprint 2 — Create and Read (C, R)
 
 **Goal:** Build the frontend UI and implement the Create and Read API routes to display and add items.
@@ -241,8 +237,6 @@ Review the generated file structure and approve the AI to write the code.
 ![Sprint 2 Result Screenshot](./images/Task3-Act.png)
 *This screenshot displays the running UI where new todos can be added and listed.* Validate that you can add a new todo and see it appear.
 
----
-
 ## Task 4: Sprint 3 — Update, Delete and Polish
 
 **Goal:** Complete the CRUD functionality by implementing the Update and Delete API routes and connecting them to the UI.
@@ -300,8 +294,6 @@ Approve the approach to complete the CRUD implementations.
 
 ![Sprint 3 Result Screenshot](./images/Task4-Act.png)
 *This screenshot shows completed todos being visually updated and removed from the list.* Provide adjusting prompts if UI elements need fixing.
-
----
 
 ## Task 5: Sprint 4 — Run and Validate
 
