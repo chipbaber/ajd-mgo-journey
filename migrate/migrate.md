@@ -75,22 +75,22 @@ MONGO_USER_TARGET user after following instruction in Lab 2 Task 2.
 Provide this grounding prompt to set the context of the new project:
 
 ```text
-Hi, we are starting a new lab. Use the `migration-cli` folder as the workspace.
+Hi Cline, we are starting a new lab. Use the `migration-cli` folder as the workspace.
 
 We are building a Node.js CLI application called `MongoVibeAssist_Migrator`. The backend connects to an Oracle Autonomous JSON Database via the Mongo API.
 
 Here is the Product Definition Document & Development Plan for context:
 
-**Product Definition:** 
-Migrate Data: Move JSON documents and indexes from a source MongoDB to a target Oracle AJD.
-Demonstrate: Allow the original MongoDB application to run unchanged against AJD by simply swapping its connection string. Demonstration-First Logging: Output must be verbose and explanatory, to be read by a live audience (e.g. "== STEP 1: CONNECTING TO SOURCE MONGODB ==", "-> Why: We must connect...").
+**Product Definition: Mongo Vibe Assist Migration Lab**
+The goal of this lab is to demonstrate how to seamlessly migrate a MongoDB database to an Oracle Autonomous JSON Database (AJD) using standard tooling. This tool will orchestrate the end-to-end migration, allowing the original MongoDB application to run unchanged against the migrated Oracle database by simply swapping its connection string.
 
-**Sprints & Tech Stack:**
-Use `mongodb`, `commander`, `cli-progress`, `dotenv`. 
-Sprint 1: Connectivity & Discovery (package.json, connect.js, discover.js parsing schemas and counts).
-Sprint 2: Core Data Migration (migrate.js batch-reading/insert_many for a single collection).
-Sprint 3: Full Migration & Indexing (looping all collections, replicating index schemas, robust failure handling).
-Sprint 4: Validation & Demo Prep (validate.js counts comparison table, outputting final connection string, complete README.md).
+We will build the application using vibe coding in structured development sprints. The project must use standard Node.js, the official `mongodb` NPM package, `commander`, `cli-progress`, and `dotenv`. The console output must have "Demonstration-First Logging", meaning it should be verbose and explanatory, designed to be read by a live audience (e.g., "== STEP 1: CONNECTING TO SOURCE MONGODB ==", "-> Why: We must connect...").
+
+Here is the Sprint plan we will follow:
+- Sprint 1: Connectivity & Discovery (package.json, connect.js, discover.js parsing schemas and counts).
+- Sprint 2: Core Data Migration (migrate.js batch-reading/insertMany for a single collection).
+- Sprint 3: Full Migration & Indexing (looping all collections, replicating index schemas, robust failure handling).
+- Sprint 4: Validation & Demo Prep (validate.js counts comparison table, outputting final connection string, complete README.md).
 
 Please acknowledge the tech stack, narrative goals, and confirm readiness for Sprint 1.
 ```
