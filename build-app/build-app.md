@@ -111,7 +111,7 @@ After that, create a server.js file and set up an Express server listening on po
 
 I also need you to set up the MongoDB connection using the official MongoClient. It should read the connection string from an environment variable called MONGO_API_URL (sourced from the root `.env` file). Please explicitly load environment variables in server.js (for example with `require('dotenv').config({ path: '../.env' })` when running from `todo-app`). Create an async connectDB function that connects and pings the admin database, and make sure you call this during the server startup. 
 
-Finally, expose the database as a global db variable so we can easily use it in our routes later. This will set us up perfectly for Sprint 2!
+Finally, expose the database as a global db variable so we can easily use it in our routes later. Please Stop any running services before we go into the next Sprint. This will set us up perfectly for Sprint 2!
 </copy>
 ```
 
@@ -313,7 +313,7 @@ As you validate, perform the full CRUD flow: create a todo, confirm it appears, 
 Then share:
 1. The exact command used to run the server
 2. A short Browser Use test summary with pass/fail for each CRUD action
-3. Any issues found and the fixes applied (if needed)
+3. Any issues found and the fixes applied (if needed), and I want to keep service running.
 </copy>
 ```
 
