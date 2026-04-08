@@ -127,7 +127,7 @@ Review the AI's summary and ensure the team is aligned on the 1:1 copy technique
 
 Confirm that your source system is fully primed with documents containing the required fields. Your source system for the migration example is now ready. Proceed to the next lab.
 
-![Analyze Migration Act](./images/lab4-task3-act.png)
+<!-- ![Analyze Migration Act](./images/lab4-task3-act.png) -->
 
 ---
 
