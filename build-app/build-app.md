@@ -30,7 +30,7 @@ By the end of this lab, you will have vibe coded a complete source application t
 
 ---
 
-## Objectives
+### Objectives
 
 In this lab you will:
 
@@ -42,7 +42,7 @@ In this lab you will:
 
 ---
 
-## Prerequisites
+### Prerequisites
 
 This lab assumes you have:
 
@@ -128,7 +128,7 @@ Cline will provide a plan that looks like this:
 > 
 Perfect—Sprint 1 requirements are now clear, and I’ve translated them into concrete acceptance criteria and an execution plan.
 
-## Sprint 1 Acceptance Criteria
+### Sprint 1 Acceptance Criteria
 1. **Root env validation**
    - Confirm a root `.env` exists.
    - Confirm `MONGO_API_URL` is present and non-empty.
@@ -149,7 +149,7 @@ Perfect—Sprint 1 requirements are now clear, and I’ve translated them into c
    - Connect and `ping` admin DB during startup.
    - Expose connected database as global `db` variable for future route usage.
 
-## Implementation Plan (when executing)
+### Implementation Plan (when executing)
 1. Verify root `.env` and `MONGO_API_URL`.
 2. Create `todo-app`, initialize npm, install dependencies.
 3. Initialize root git repo and add root `.gitignore` with required ignore rules.
@@ -364,7 +364,8 @@ If you would like to proceed to the next lab without running the AI prompts, you
 
 ### server.js
 
-```javascript
+```text
+<copy>
 const express = require('express');
 const { MongoClient, ObjectId } = require('mongodb');
 require('dotenv').config({ path: '../.env' });
@@ -410,11 +411,13 @@ app.delete('/api/todos/:id', async (req, res) => {
 connectDB().then(() => {
   app.listen(3000, () => console.log('Server running on port 3000'));
 });
+</copy>
 ```
 
 ### public/index.html
 
-```html
+```text
+<copy>
 <!DOCTYPE html>
 <html>
 <head>
@@ -465,6 +468,7 @@ loadTodos();
 </script>
 </body>
 </html>
+</copy>
 ```
 
 ---
