@@ -237,7 +237,7 @@ Let the AI create the validation scripts and the final README.md.
 You can now fully execute your tool:
 
 ```bash
-node main.js --run-all
+node migrate.js --run-all
 ```
 
 Watch the demonstration-first logging output to the terminal, and view the validation summary table confirming all your data successfully reached Oracle AJD.
