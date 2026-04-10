@@ -49,7 +49,6 @@ MONGO_USER_TARGET user after following instruction in Lab 2 Task 2.
    ![Migration CLI](./images/mongousertarget.png)
 
 2. Ensure you have the source connection string ready (from Lab 2 as `$SOURCE_MONGO_API_URL`) and provision a new one for the target as `$TARGET_MONGO_API_URL`. Follow Lab 2 Task 4 to copy the source and target MongoDB API URLs.
-
    ![Migration CLI](./images/mongoAPI.png)
 
 3. Add the original `MONGO_API_URL` as `SOURCE_MONGO_API_URL` and the new connection string as `TARGET_MONGO_API_URL` to the `.env` file created in Lab 3.
