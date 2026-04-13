@@ -13,12 +13,12 @@
       "filename": "https://oracle-livelabs.github.io/common/labs/remote-desktop/using-novnc-remote-desktop.md"
     },
     {
-      "title": "Lab 1 (Optional): Configure Cline AI Assistant",
+      "title": "Lab 1: Configure Cline AI Assistant",
       "description": "Set up AI assistance",
       "filename": "../../cline-config/cline-config.md"
     },
     {
-      "title": "Lab 2 (Optional): Provision and Connect to AJD",
+      "title": "Lab 2: Provision and Connect to AJD",
       "description": "Setup AJD instance",
       "filename": "../../provision-connect/provision-connect.md"
     },
