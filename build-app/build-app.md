@@ -61,7 +61,13 @@ This lab assumes you have:
 
 *How to construct this prompt:* Start by providing clear context about the project, the developer persona, and the specific technologies (Node.js, Express, MongoDB driver, and Oracle AJD). Supplying a full Product Definition Document ensures that the AI has a solid foundation before generating any code.
 
-Provide this grounding prompt:
+Open a new task in Cline by pressing the + button at the top. 
+![New Task Cline](./images/newtaskcline.png)
+
+Check to make sure your Cline chat is in Plan mode:
+![Cline Plan Mode](./images/planmode.png)
+
+Paste in this grounding prompt:
 
 ```text
 <copy>
@@ -166,6 +172,8 @@ Before acting on the plan, review it to ensure:
 ### 3. Acting on the plan: Allowing the AI to write the code
 
 If this plan looks good, please toggle to **Act Mode (⌘⇧A)** and allow the AI to implement Sprint 1 end-to-end.
+
+![](./images/clineact.png)
 
 ### 4. Validating and adjusting: Testing the output and making necessary corrections
 
