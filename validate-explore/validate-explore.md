@@ -81,7 +81,8 @@ Confirm the AI response includes:
 - A practical sequence for repoint, validate, and explore
 - Explicit readiness to begin Sprint 1
 
-*add image: Cline response confirming Sprint 0 grounding and readiness.*
+<!-- *add image: Cline response confirming Sprint 0 grounding and readiness.* -->
+![Sprint 0 Plan Screenshot](./images/lab6-task2-plan.png)
 
 ### 3. Acting on the plan: Aligning the session
 
@@ -149,7 +150,8 @@ Before acting on the plan, review it to ensure:
 - The application is still using the same AJD-compatible MongoDB connection pattern from Lab 3.
 - Only the environment configuration is changing for this validation step.
 
-*add image: Cline response with repointing commands.*
+<!-- *add image: Cline response with repointing commands.* -->
+![Sprint 1 Plan Screenshot](./images/lab6-task2-plan.png)
 
 ### 3. Acting on the plan: Allowing Cline to execute
 
@@ -164,8 +166,9 @@ Toggle to **Act Mode** and let Cline run the approved Sprint 1 commands:
 ### 4. Validating and adjusting: Testing the output
 
 Confirm the server starts successfully and no connection errors appear.
-
-*add image: Terminal showing updated env vars and running app.*
+ 
+<!-- *add image: Terminal showing updated env vars and running app.* -->
+![Sprint 1 Act Screenshot](./images/lab6-task2-act.png)
 
 ---
 
@@ -226,7 +229,9 @@ Before acting on the plan, review it to ensure:
 - The checklist validates both application behavior and underlying target data.
 - The validation still focuses on the migrated `todos_target` collection.
 
-*add image: Cline validation checklist response.*
+<!-- *add image: Cline validation checklist response.* --> 
+
+![Sprint 2 Act Screenshot](./images/lab6_task3_act.png)
 
 ### 3. Acting on the plan: Allowing Cline to execute validation
 
@@ -444,7 +449,8 @@ Before acting on the plan, review it to ensure:
 - The Oracle-native features are clearly separated from the baseline app behavior.
 - The proposed database objects and policies are scoped carefully and can be validated within the lab.
 
-*add image: Cline Sprint 4 implementation plan.*
+<!-- *add image: Cline Sprint 4 implementation plan.* -->
+![Sprint 4 plan Screenshot](./images/lab6_task5_plan.png)
 
 ### 3. Acting on the plan: Allowing Cline to execute feature build
 
@@ -519,7 +525,9 @@ Before acting on the plan, review it to ensure:
 - The validation covers both successful paths and failure cases.
 - The outcomes are concrete enough for a workshop participant to verify independently.
 
-*add image: Cline Sprint 5 validation plan.*
+<!--*add image: Cline Sprint 5 validation plan.* -->
+
+![Sprint 6 plan Screenshot](./images/lab6_task6_plan.png)
 
 ### 3. Acting on the plan: Allowing Cline to execute validation flow
 
