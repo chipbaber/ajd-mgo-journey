@@ -180,6 +180,10 @@ Visual Studio Code on Windows - (https://code.visualstudio.com/docs/setup/window
 
    ![Continue configuration](./images/OpenGitWeb.png)
 
+3. Follow the instructions in this video to set cline to execute in gitbash. [Set Cline to Execute in Git Bash](https://youtu.be/5LAsmbTlb44)
+
+   ![](./images/clinegitbash.png)
+
 ### Task 7:  NodeJS Installation
 
 ### Install NodeJS on macOS/Linux
@@ -189,14 +193,17 @@ Visual Studio Code on Windows - (https://code.visualstudio.com/docs/setup/window
 
 * Download and install nvm:
    ```bash
+   <copy>
    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
    ```
    * in lieu of restarting the shell
    ```bash
+   <copy>
    \. "$HOME/.nvm/nvm.sh" 
    ```
    * Download and install Node.js:
    ```bash 
+   <copy>
    nvm install 24 
    ```
 
@@ -213,7 +220,8 @@ Visual Studio Code on Windows - (https://code.visualstudio.com/docs/setup/window
 
 1. Open VS Code Terminal and Check Node Version to check it is properly installed.
 
-   ```bash   
+   ```bash  
+   <copy> 
    node -v   
    ```
 * You should see the version number appear if you completed the install correctly.
@@ -231,6 +239,7 @@ Visual Studio Code on Windows - (https://code.visualstudio.com/docs/setup/window
 3. Create a small test file (for example `hello.js`) and paste this code:
 
    ```js
+   <copy>
       function add(a, b) {
       return a + b;
       }

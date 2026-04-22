@@ -43,12 +43,16 @@ This lab assumes you have:
    ![Create Autonomous Database button](./images/AIDatabaseCreate.png)
 
 4. Rename Display name as **ajd-mongo-todo** 
-   ```
+   ```text
+   <copy>
    ajd-mongo-todo
+   </copy>
    ```
    Rename Database name as **ajdmongotodo**
-   ```
+   ```text
+   <copy>
    ajdmongotodo
+   </copy>
    ```
    Select **JSON Database** as the workload type.
 
@@ -71,7 +75,9 @@ This lab assumes you have:
    **Note** Alternatively, to get your public ip address, you can go to whatismyipaddress.com, or run the following command
 
    ```bash
+   <copy>
    curl -s ifconfig.me
+   </copy>
    ```
 
 6. Click **Create**. Wait for the instance to provision. You should see the following once the provisioning has completed.
@@ -161,8 +167,10 @@ This lab assumes you have:
    ![URI Check](./images/fixeduri.png)
 
    Copy the text generated to leverage in the next step. In this example you would copy the text.
-   ```
+   ```text 
+   <copy>
    P%40ssword%21
+   </copy>
    ```
 
 8. Replace the text **password@]** with your URI encoded password + an @ symbol at the end. 
@@ -172,17 +180,31 @@ This lab assumes you have:
    ![Password Fix](./images/pwd_fix.png)
 
 9. This is an example completed url. 
-```
+```text
+<copy>
 mongodb://mongo_user:<your password>@<your ai database url>:27017/mongo_user?authMechanism=PLAIN&authSource=$external&ssl=true&retryWrites=false&loadBalanced=true
+</copy>
 ```
 
-10. Finally, create a `.env` file at the **root of your workspace** and store your connection string as `MONGO_API_URL` so your application can securely access it in the next lab.
+10. Finally, create a new folder on your machine.
+```bash
+<copy>
+mkdir lab
+</copy>
+```
 
-Use the following format in your root `.env` file:
+ Create `.env` file inside the folder. Edit the file to include your connect string as `MONGO_API_URL` so your application can securely access it in the next lab.
+
+Paste the the following format in your root `.env` file and update the details with the mongo url created in the prior steps:
 
 ```env
+<copy>
 MONGO_API_URL=mongodb://mongo_user:<your password>@<your ai database url>:27017/mongo_user?authMechanism=PLAIN&authSource=$external&ssl=true&retryWrites=false&loadBalanced=true
+</copy>
 ```
+
+Open your Folder in VS Code by selecting File --> Open Folder.
+
 
 **Note:** Keep `.env` out of source control. In Lab 3, your Node.js app will read this value as `process.env.MONGO_API_URL`.
 
