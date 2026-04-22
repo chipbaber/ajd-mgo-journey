@@ -104,6 +104,8 @@ Please acknowledge and confirm readiness for Sprint 1.
 
 *How to construct this prompt:* Explicitly define the goal of the sprint. Break down the requirements into actionable, step-by-step instructions. Tell the AI exactly which dependencies to install, to initialize a local git repository with an appropriate `.gitignore` at the root, what file to create, and how to handle the database connection using environment variables.
 
+Continue working in Plan Mode. Copy and enter the prompt below into Cline to define sprint 1. 
+
 ```text
 <copy>
 Hey again, let's kick off Sprint 1! 
@@ -124,54 +126,15 @@ Finally, expose the database as a global db variable so we can easily use it in 
 
 ### 2. Reviewing the plan: Checking the AI's proposed implementation
 
-![Sprint 1 Planning Screenshot](./images/Task2-Plan.png)
-
-*This screenshot illustrates the AI planning project initialization, dependency installation, and database connection setup.*
-
 Cline will provide a plan that looks like this:
 
-> **Planning Phase**
-> 
-Perfect—Sprint 1 requirements are now clear, and I’ve translated them into concrete acceptance criteria and an execution plan.
+![Sprint 1 Planning Screenshot](./images/Task2-Plan.png)
 
-### Sprint 1 Acceptance Criteria
-1. **Root env validation**
-   - Confirm a root `.env` exists.
-   - Confirm `MONGO_API_URL` is present and non-empty.
-2. **Project scaffolding**
-   - Create `todo-app/`.
-   - Initialize Node.js project (`package.json`) inside `todo-app`.
-   - Install `express`, `mongodb`, `dotenv` in `todo-app`.
-3. **Root git setup**
-   - Initialize git repository at workspace root (outside `todo-app`).
-   - Create root `.gitignore` that ignores:
-     - `todo-app/node_modules`
-     - any `.env` files
-4. **Server implementation** (`todo-app/server.js`)
-   - Express app with `express.json()` middleware.
-   - Listen on port `3000`.
-   - Load env vars explicitly from root `.env` (e.g. `dotenv.config({ path: '../.env' })`).
-   - Implement `async connectDB()` with official `MongoClient` using `process.env.MONGO_API_URL`.
-   - Connect and `ping` admin DB during startup.
-   - Expose connected database as global `db` variable for future route usage.
-
-### Implementation Plan (when executing)
-1. Verify root `.env` and `MONGO_API_URL`.
-2. Create `todo-app`, initialize npm, install dependencies.
-3. Initialize root git repo and add root `.gitignore` with required ignore rules.
-4. Create `todo-app/server.js` with Express + dotenv + MongoClient connection logic.
-5. Run a quick startup check (`node server.js`) to validate boot and DB ping behavior.
-
-I’m ready to execute this immediately. Please **toggle to Act mode** and I’ll perform Sprint 1 changes now.
-
-Before acting on the plan, review it to ensure:
-- It uses the standard `mongodb` driver (not an Oracle-specific driver).
-- The `MONGO_API_URL` value is sourced from the root `.env` file, and server startup explicitly loads that `.env` file before `MongoClient` is created.
-- It correctly targets the `todo-app` subfolder while keeping the git repo and `.gitignore` at the workspace root.
+If the llm has wondered off, you can coach it at any point on a particular step in the sprint.
 
 ### 3. Acting on the plan: Allowing the AI to write the code
 
-If this plan looks good, please toggle to **Act Mode (⌘⇧A)** and allow the AI to implement Sprint 1 end-to-end.
+If this plan looks good, please toggle to **Act Mode (⌘⇧A)** and allow the AI to implement Sprint 1 end-to-end. The LLM will prompt you to review and run commands till it completes the task.
 
 ![](./images/clineact.png)
 
@@ -190,6 +153,9 @@ If you see an error like `TypeError: Cannot read properties of undefined (readin
 
 *How to construct this prompt:* Describe the specific API routes required for Create and Read operations. Then, provide structural instructions for the frontend UI, detailing the specific HTML elements needed (heading, input field, button, list) and requesting the corresponding frontend JavaScript to link the UI and API.
 
+Check to make sure your Cline chat is in Plan mode, then paste in the following prompt:
+![Cline Plan Mode](./images/planmode.png)
+
 ```text
 <copy>
 We're ready for Sprint 2! Now we need to handle Create and Read operations.
@@ -199,46 +165,29 @@ Please add a GET /api/todos route that returns the documents from the 'todos' co
 Next, let's give this an interface. Please set up express.static to serve files from a public folder, and build a simple index.html file inside it. 
 
 The UI should just have a heading, a text input field, an add button, and an unordered list to display the to-dos. Finally, include vanilla JavaScript in the frontend to automatically fetch the existing to-dos on load and render them as list items!
+
 </copy>
+```
+
+[Optional Windows Only] In Plan Mode enter this additional prompt.
+```
+Even though we are on Windows, you can assume commands will execute in git bash.
 ```
 
 ### 2. Reviewing the plan: Checking the AI's proposed implementation
 
+Review your planning phase results and coach adjustments as needed. 
+
 ![Sprint 2 Planning Screenshot](./images/Task3-Plan.png)
 *This screenshot shows the AI outlining API route creation and frontend UI generation steps.*
 
-** Planning Phase **
-
-Sprint 2 is well scoped and ready.
-
-I reviewed the current `todo-app/server.js`, and the Sprint 1 foundation is in place: Express is running, `express.json()` is enabled, AJD/Mongo connection is initialized at startup, and `global.db` is available.
-
-Implementation plan for Sprint 2:
-1. Add `express.static` in `server.js` to serve a new `public` folder
-2. Add `GET /api/todos` to read all documents from the `todos` collection
-3. Add `POST /api/todos` to accept a `text` field and insert `{ text, completed: false }`
-4. Create `todo-app/public/index.html`
-5. Build a minimal UI with:
-   - heading
-   - text input
-   - add button
-   - unordered list
-6. Add vanilla JavaScript in the page to:
-   - fetch `/api/todos` on load
-   - render todos into the list
-   - submit new todos to the POST route
-   - refresh the rendered list after adding
-
-A couple of small implementation choices I’ll use unless you want otherwise:
-- `GET /api/todos` will likely sort newest first using `_id: -1`
-- `POST /api/todos` will validate that `text` is present and non-empty, returning `400` if invalid
-- The root `/` route can serve `index.html` automatically through `express.static`
-
-If that sounds good, please toggle to Act mode and I’ll implement Sprint 2.
-
 ### 3. Acting on the plan: Allowing the AI to write the code
 
-Review the generated file structure and approve the AI to write the code.
+Review the generated file structure and approve the AI to act and write the code.
+![Cline Act Image](./images/clineact.png)
+
+As Sprint 2 executes you may be prompted to approve code execution or to proceed while code is running. Please review the ask and if it looks to be as expected accept or select to proceed.
+![Proceed while running image](./images/proceedwhilerunning.png)
 
 ### 4. Validating and adjusting: Testing the output and making necessary corrections
 
@@ -270,33 +219,10 @@ Back on the frontend, could you update the UI to include a "Complete" and "Delet
 ![Sprint 3 Planning Screenshot](./images/Task4-Plan.png)
 *This screenshot captures the AI describing enhancements to support update and delete functionality.*
 
-**Planning Phase**
-Sprint 3 is ready to implement.
-
-I reviewed both the backend and frontend. The current app already supports Create and Read, serves static files, and renders todos from the API, so we can cleanly extend it for the remaining CRUD operations.
-
-Planned Sprint 3 changes:
-1. Update the backend Mongo import to include `ObjectId`
-2. Add `PUT /api/todos/:id` to mark a todo as `{ completed: true }`
-3. Add `DELETE /api/todos/:id` to remove a todo by `_id`
-4. Handle invalid IDs and not-found documents cleanly with appropriate status codes
-5. Update the frontend renderer so each list item shows:
-   - todo text
-   - a `Complete` button
-   - a `Delete` button
-6. Wire the buttons to call the new PUT and DELETE endpoints
-7. Refresh the list after each action so the UI stays in sync
-
-Implementation details I’ll use unless you want a different behavior:
-- `PUT /api/todos/:id` will only set `completed: true` (as requested), not toggle back and forth
-- Completed items can be visually distinguished in the UI, for example with strikethrough text or muted styling
-- The frontend will continue using plain vanilla JavaScript in `index.html`
-
-If that looks good, please toggle to Act mode and I’ll implement Sprint 3.
-
 ### 3. Acting on the plan: Allowing the AI to write the code
 
-Approve the approach to complete the CRUD implementations.
+Approve the approach and set to ACT to complete the CRUD implementations.
+![Cline Act Image](./images/clineact.png)
 
 ### 4. Validating and adjusting: Testing the output and making necessary corrections
 
@@ -323,6 +249,7 @@ Then share:
 1. The exact command used to run the server
 2. A short Browser Use test summary with pass/fail for each CRUD action
 3. Any issues found and the fixes applied (if needed), and I want to keep service running.
+4. The url to access the application online.
 </copy>
 ```
 
@@ -331,28 +258,11 @@ Then share:
 ![Sprint 4 Planning Screenshot](./images/Task5-Plan.png)
 *This screenshot shows the AI outlining how to start the server and validate endpoints.*
 
-**Planning Phase**
-Great — we can validate Sprint 4 with the available tooling once you switch to Act mode.
-
-Plan:
-1. Run the server locally from `todo-app`
-2. Use HTTP requests (`curl`) against `http://localhost:3000` to validate the app behavior
-3. Exercise the full CRUD flow:
-   - Create a todo
-   - Read/confirm it appears
-   - Mark it complete
-   - Delete it
-4. If any issue appears, I’ll inspect the code, apply a fix, and re-test
-5. I’ll then report back with:
-   - the exact command used to run the server
-   - a short pass/fail test summary for Create, Read, Update, and Delete
-   - any issues found and fixes applied
-
-Please toggle to Act mode and I’ll run the server and perform the validation.
 
 ### 3. Acting on the plan: Allowing the AI to write the code
 
-Accept the AI's provided command instructions.
+Accept the AI's provided command instructions and select ACT and write the code..
+![Cline Act Image](./images/clineact.png)
 
 ### 4. Validating and adjusting: Testing the output and making necessary corrections
 
@@ -362,7 +272,8 @@ Accept the AI's provided command instructions.
 Open:
 [http://localhost:3000](http://localhost:3000)
 
-Use Browser Use to create, complete, and delete todos, and confirm each action succeeds.
+Use Browser Use to create, complete, and delete todos, and confirm each action succeeds. You should see something like the image below has been created. 
+![Example App Image](./images/2026-04-22-09-15-45.png)
 
 ---
 
